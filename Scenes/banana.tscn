@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dwkukmanqjg03"]
+
+[ext_resource type="Script" uid="uid://dkmjtl8oec71h" path="res://Scenes/banana.gd" id="1_bkbm4"]
+[ext_resource type="Texture2D" uid="uid://d3c52ykhiagfd" path="res://Assets/BanannaSpriteSheet.svg" id="1_qdlp1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xad64"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sstt"]
+atlas = ExtResource("1_qdlp1")
+region = Rect2(0, 0, 10, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wopn"]
+atlas = ExtResource("1_qdlp1")
+region = Rect2(10, 0, 10, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rywqr"]
+atlas = ExtResource("1_qdlp1")
+region = Rect2(20, 0, 10, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f3q2"]
+atlas = ExtResource("1_qdlp1")
+region = Rect2(30, 0, 10, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4ddf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sstt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wopn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rywqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f3q2")
+}],
+"loop": 1,
+"name": &"Spinning",
+"speed": 5.0
+}]
+
+[node name="Banana" type="Area2D" unique_id=2142736013]
+script = ExtResource("1_bkbm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1896522096]
+shape = SubResource("CircleShape2D_xad64")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=203801148]
+sprite_frames = SubResource("SpriteFrames_d4ddf")
+animation = &"Spinning"

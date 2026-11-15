@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://biq2ubv708xcu"]
+
+[ext_resource type="PackedScene" uid="uid://dftrpkfy22rxb" path="res://Scenes/player.tscn" id="1_vk57k"]
+[ext_resource type="Texture2D" uid="uid://dhhes7lprtapl" path="res://Assets/BlockPack.png" id="3_xfk5q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
+texture = ExtResource("3_xfk5q")
+0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_3/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_4/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_8wn0i"]
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
+physics_layer_2/collision_layer = 1
+physics_layer_3/collision_layer = 1
+physics_layer_4/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7p6j4")
+
+[node name="Level1" type="Node2D" unique_id=852463372]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1632890765]
+tile_map_data = PackedByteArray("AAASABcAAAAAAAEAAAATABcAAAAAAAEAAAAUABcAAAAAAAEAAAAVABcAAAAAAAEAAAAWABcAAAAAAAEAAAAXABcAAAAAAAEAAAAYABcAAAAAAAEAAAAZABcAAAAAAAEAAAAaABcAAAAAAAEAAAAbABcAAAAAAAEAAAAeABcAAAAAAAEAAAAfABcAAAAAAAEAAAAgABcAAAAAAAEAAAAgABgAAAADAAAAAAAfABgAAAADAAAAAAAeABgAAAADAAAAAAAbABgAAAADAAAAAAAaABgAAAADAAAAAAAZABgAAAADAAAAAAAYABgAAAADAAAAAAAXABgAAAADAAAAAAAWABgAAAADAAAAAAAVABgAAAADAAAAAAASABgAAAADAAAAAAATABgAAAADAAAAAAAUABgAAAADAAAAAAAWABYAAAACAAAAAAAWABUAAAACAAAAAAAVABUAAAACAAAAAAAZABQAAAACAAAAAAAaABQAAAACAAAAAAAbABYAAAACAAAAAAAhABYAAAAAAAEAAAAiABYAAAAAAAEAAAAjABYAAAAAAAEAAAAhABcAAAADAAAAAAAiABcAAAADAAAAAAAjABcAAAADAAAAAAAjABgAAAADAAAAAAAiABgAAAADAAAAAAAhABgAAAADAAAAAAAlABUAAAACAAAAAAAmABUAAAACAAAAAAApABUAAAACAAAAAAAqABUAAAACAAAAAAAtABUAAAAAAAEAAAAuABUAAAAAAAEAAAAvABUAAAAAAAEAAAAwABUAAAAAAAEAAAAtABYAAAADAAAAAAAtABcAAAADAAAAAAAtABgAAAADAAAAAAAuABgAAAADAAAAAAAvABgAAAADAAAAAAAwABgAAAADAAAAAAAwABcAAAADAAAAAAAwABYAAAADAAAAAAAvABYAAAADAAAAAAAuABYAAAADAAAAAAAuABcAAAADAAAAAAAvABcAAAADAAAAAAAxABsAAAAAAAAAAAAyABsAAAAAAAAAAAAwABsAAAAAAAAAAAAzABUAAAACAAAAAAAzABQAAAACAAAAAAAzABMAAAACAAAAAAAzABIAAAACAAAAAAAzABYAAAACAAAAAAAzABcAAAACAAAAAAAzABgAAAACAAAAAAAzABkAAAACAAAAAAAzABoAAAACAAAAAAAzABsAAAACAAAAAAAvABsAAAAAAAAAAAAuABsAAAAAAAAAAAAtABkAAAACAAAAAAAtABoAAAACAAAAAAAtABsAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_8wn0i")
+
+[node name="Player" parent="." unique_id=522956740 instance=ExtResource("1_vk57k")]
+position = Vector2(315, 359)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=518727259]
+position = Vector2(-2, -13)
+zoom = Vector2(6, 6)
+
+[node name="Label" type="Label" parent="." unique_id=590977433]
+offset_left = 738.0
+offset_top = 404.0
+offset_right = 815.0
+offset_bottom = 434.0
+text = "You Win!"
